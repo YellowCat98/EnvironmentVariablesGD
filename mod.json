@@ -10,5 +10,10 @@
 	"name": "Environment Variables",
 	"version": "v1.0.0",
 	"developer": "YellowCat98",
-	"description": ""
+	"description": "",
+	"api": {
+		"include": [
+			"include/*.hpp"
+		]
+	}
 }

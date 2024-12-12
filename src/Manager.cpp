@@ -13,7 +13,9 @@ env::Manager* env::Manager::get() {
 }
 
 void env::Manager::setVariable(const std::string& name, const std::string& value) {
-    envVars.insert({name, value});
+    if (envVars.find(name) == envVars.end()) {
+        envVars.insert({name, value});
+    }
 }
 
 std::string env::Manager::getVariableValue(const std::string& value) {
@@ -22,4 +24,8 @@ std::string env::Manager::getVariableValue(const std::string& value) {
 
 void env::Manager::removeVariable(const std::string& value) {
     envVars.erase(value);
+}
+
+std::map<std::string, std::string> env::Manager::getAllVariables() {
+    return envVars;
 }
